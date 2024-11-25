@@ -14,13 +14,13 @@ function intento() {
 
     //num == numUsu ? asignar(p, "acertaste :D") : asignar(p, "Incorrecto");
     if(num == numUsu){
-        asignar('p', `acertaste :D, en: ${intentos} ${intentos == 1 ? "intento" : "intentos"}`);
+        asignar('p', `Felicidades acertaste en ${intentos} ${intentos == 1 ? "intento" : "intentos"}. ¡RECLAMA TU DULCE!`);
         document.getElementById('reiniciar').removeAttribute('disabled');
         
     } else if(numUsu > num){
-        asignar('p', 'Es menor')
+        asignar('p', 'Incorrecto, el numero es menor')
     } else if(numUsu < num){
-        asignar('p', 'Es mayor')
+        asignar('p', 'Incorrecto, el numero es mayor')
     }
 
     limpiar();
@@ -32,7 +32,7 @@ function nuevo() {
     limpiar();
     num = numAleatorio();
     intentos = 0;
-    asignar('p', 'Numero del 1 a 10');
+    asignar('p', 'Ingresa un Numero del 1 a 10');
     //document.getElementById('reiniciar').setAttribute('disabled');
     document.querySelector('#reiniciar').setAttribute('disabled', true);
 }
@@ -46,5 +46,5 @@ function numAleatorio() {
     return Math.floor(Math.random() * 10) + 1;
 }
 
-asignar('h1', 'Texto otra ve')
-asignar('p', 'Ingresa un Numero: ')
+asignar('h1', 'Adivina el número!')
+asignar('p', 'Ingresa un Numero del 1 a 10: ')
